@@ -28,10 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
         description.textContent = details.description;
 
         const schedule = document.createElement("p");
-        schedule.innerHTML = `<strong>Schedule:</strong> ${details.schedule}`;
+        const scheduleLabel = document.createElement("strong");
+        scheduleLabel.textContent = "Schedule:";
+        schedule.appendChild(scheduleLabel);
+        schedule.appendChild(document.createTextNode(" " + details.schedule));
 
         const availability = document.createElement("p");
-        availability.innerHTML = `<strong>Availability:</strong> ${spotsLeft} spots left`;
+        const availabilityLabel = document.createElement("strong");
+        availabilityLabel.textContent = "Availability:";
+        availability.appendChild(availabilityLabel);
+        availability.appendChild(document.createTextNode(" " + spotsLeft + " spots left"));
 
         const participantsSection = document.createElement("div");
         participantsSection.className = "participants-section";
