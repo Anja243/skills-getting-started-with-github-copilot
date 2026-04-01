@@ -131,6 +131,14 @@ section h3 {
   transform: scale(0.95);
 }
 
+.delete-participant-btn:focus {
+  outline: none;
+}
+
+.delete-participant-btn:focus-visible {
+  outline: 3px solid #1a237e;
+  outline-offset: 2px;
+}
 .form-group {
   margin-bottom: 15px;
 }
