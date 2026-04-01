@@ -1,3 +1,4 @@
+import copy
 import pytest
 from fastapi.testclient import TestClient
 from src.app import app, activities
@@ -71,7 +72,7 @@ def reset_activities():
 
     # Clear and reset
     activities.clear()
-    activities.update(initial_state)
+    activities.update(copy.deepcopy(initial_state))
     yield
     activities.clear()
-    activities.update(initial_state)
+    activities.update(copy.deepcopy(initial_state))
