@@ -63,9 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
             emailSpan.textContent = participant;
 
             const deleteBtn = document.createElement("button");
+            deleteBtn.type = "button";
             deleteBtn.className = "delete-participant-btn";
             deleteBtn.textContent = "×";
             deleteBtn.title = `Remove ${participant} from ${name}`;
+            deleteBtn.setAttribute("aria-label", `Remove ${participant} from ${name}`);
             deleteBtn.addEventListener("click", async (e) => {
               e.preventDefault();
               await removeParticipant(name, participant);
